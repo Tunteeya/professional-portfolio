@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umar Farouk | Blog</title>
+  <link rel="stylesheet" href="">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="assets/images/A.png" type="image/svg+xml">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: rgb(36, 35, 56);
+      color: #333;
+    }
+
+    header {
+      background-color: rgb(36, 35, 56);
+      color: #fff;
+      padding: 1px 15px;
+      position: sticky;
+      top: 0;
+      transition: 0.25s var(--cubic-out);
+      z-index: 4;
+      /* dark background makes white shadow pop */
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+      height: 100px;
+    }
+
+
+    .logo {
+      padding-top: 1.5rem;
+      padding-left: 1rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+      color: var(--white);
+      font-family: var(--ff-barlow);
+      padding-block: 3px;
+      transition: var(--transition-1);
+      padding-right: 7rem;
+      padding-top: 1rem;
+
+
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: medium;
+
+    }
+
+    .nav-links a:hover {
+      color: rgb(251, 82, 57);
+    }
+
+    .me:hover {
+      color: blue;
+    }
+
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      background-color: yellow;
+      border-radius: 50%;
+      display: inline-block;
+      animation: fade 1.5s infinite ease-in-out;
+      margin-left: -27px;
+      margin-top: 6px;
+
+
+
+
+    }
+
+    @keyframes fade {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: #053b71;
+      color: #fff;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .post {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .post img {
+      width: 100%;
+    }
+
+    .post h2 {
+      margin: 15px;
+    }
+
+    .post p {
+      margin: 0 15px 15px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin: 0 15px 15px;
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sidebar .widget {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .logo {
+      color: var(--white);
+      font-family: var(--ff-poppins);
+      font-size: 2rem;
+      width: 4rem;
+      margin-top: -0.5rem;
+
+    }
+
+    .back-top {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      padding: 10px;
+      background-color: #4f46e5;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      display: none;
+      /* hide initially */
+    }
+
+    .back-top span {
+      border-left: 1px solid white;
+      /* vertical line */
+      margin-left: 5px;
+      padding-left: 5px;
+    }
+
+    .back-top:hover {
+      background-color: #4338ca;
+      /* Darker indigo */
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <!--<div class="logo">Umar Farouk</div>-->
+      <a href="index.html">
+        <img class="logo" src="assets/images/H.png" alt="">
+      </a>
+      <ul class="nav-links">
+        
+
+        <li>
+          <a href="index.html#about" class="navbar-link" data-nav-link>About</a>
+        </li>
+        <li>
+          <a href="index.html#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+        </li>
+        <li>
+          <a href="index.html#skills" class="navbar-link" data-nav-link>Skills</a>
+        </li>
+        <li><a href="index.html#contact">Contact </a></li>
+        <div class="dot"></div>
+
+        <li>
+          <a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a>
+        </li>
+        <li>
+          <a style="font-weight: 700; font-size: large; background-color: red; padding: 10px 40px; border-radius: 50px;"
+            href="Files/UMAR.pdf" class="download">Download CV</a>
+        </li>
+
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <section style="background-image: url(assets/images/heroo.jpg);" class="hero">
+    <h1 style="font-size: 200; ">Blockchain Technology</h1>
+    <p>My journey to earning to Earing the <b><span style="color: red;"> Web3 Fundamentals Certificate</span></b> at
+      Hackerboost</p>
+    <p style="font-size: smaller;" class="card-date">October , 2024 | Umar Farouk</p>
+  </section>
+
+  <main class="container">
+    <section class="blog-posts" id="blog-posts">
+      <article class="post">
+        <img src="assets/images/B.jpg" alt="Blog image">
+        <!--<h2>Optimizing Frontend Performance</h2>-->
+        <br><br>
+        <p>Over the past few years, the global technology landscape has been experiencing a tremendous shift—one that is
+          steering us from the centralized systems we have always known into a decentralized future powered by
+          blockchain technology. As a <b> BSc Software Engineering student</b>, I have always believed in staying ahead
+          of
+          technological innovations. That is why I decided to challenge myself by joining the Hackerboost Web3
+          Blockchain Bootcamp, a rigorous two-month training that ran from October to January.<br><br>
+
+
+          Looking back, I can confidently say that this journey was more than just an academic exercise. It was a
+          life-changing experience that equipped me with industry-relevant skills, connected me with brilliant
+          instructors and peers, and gave me a fresh perspective on how Web3 technologies are shaping the future of
+          software engineering.<br><br>
+
+
+          <b> The Beginning of My Web3 Journey</b><br><br>
+
+
+          When I first enrolled in the Web3 Fundamentals Certificate program, I was excited but also slightly unsure of
+          what to expect. Blockchain was not entirely new to me—I had read about Bitcoin, Ethereum, and decentralized
+          applications (dApps)—but I wanted to move beyond the headlines and dive deep into the technical core of
+          Web3.<br><br>
+
+
+          The bootcamp began in October, and from the very first session, I could feel the difference. The learning
+          environment was highly practical, focused on building, experimenting, and problem-solving rather than just
+          memorizing concepts. My instructors—Habib Maltiba, Likem Dzokoto, and Sahabia Yakubu—brought a wealth of
+          knowledge and experience into the classroom. They not only explained the concepts but also guided us on how to
+          apply them in real-world scenarios.<br><br>
+
+
+          <b> The Structure of the Bootcamp</b><br><br>
+
+
+          The Hackerboost program was designed to progressively take us from fundamental concepts into advanced
+          blockchain development. By the time the bootcamp ended in January, I had not only earned the Web3 Fundamentals
+          Certificate, but also achieved two other important certifications, which are Web3 Developer Bootcamp
+          Certificate and Web3 Developer Bootcamp Certificate. <br><br>
+
+
+          This progression was crucial. We started with the basics: understanding blockchain as a distributed ledger,
+          cryptographic principles, consensus mechanisms, and tokenomics. From there, we moved into hands-on projects
+          involving smart contracts, decentralized applications (dApps), and Solidity programming.<br><br>
+
+
+          Each stage of the bootcamp felt like a building block that seamlessly prepared me for the next, and by the
+          end, I could confidently design and implement blockchain-based solutions.<br><br>
+
+
+          <b>Reflections on the Experience</b><br><br>
+
+
+          As a Software Engineering student, the bootcamp was not only a valuable addition to my resume but also a
+          strong complement to my academic field. Traditional software engineering often focuses on centralized
+          systems—databases, servers, APIs—but the Web3 space challenges these assumptions by introducing
+          decentralization, trustless systems, and peer-to-peer networks.<br><br>
+
+
+          Through this bootcamp, I was able to connect the dots between what I study in class and the future of software
+          systems:<br><br>
+
+
+          <b> Software Architecture vs. Smart Contracts :</b> In my degree program, I learn about modular design and
+          system
+          architecture. Solidity programming gave me the opportunity to apply these principles in writing smart
+          contracts that are both efficient and secure.<br><br>
+
+
+          <b> Databases vs. Blockchain Ledgers :</b> Instead of relational databases, blockchain offers a decentralized,
+          immutable ledger. Understanding the technical workings of consensus mechanisms has reshaped how I think about
+          data integrity and security.<br><br>
+
+
+          <b> Cybersecurity and Trust :</b> Blockchain's cryptographic foundations tie in perfectly with my coursework
+          in
+          security, but the bootcamp emphasized real-world applications of encryption and digital signatures.<br><br>
+
+
+          <b> Agile Development in Web3 :</b> Just like in software engineering, agile principles apply in blockchain
+          development. Iterative testing of smart contracts and dApps taught me how crucial debugging, peer review, and
+          security audits are in this field.<br><br>
+
+
+          <b>The Human Element: Instructors and Community</b><br><br>
+
+
+          What stood out most in this journey was the mentorship and collaboration. Instructors like <b> Habib
+            Maltiba</b>,<b> Likem Dzokoto</b>, and <b>Sahabia Yakubu</b> were not just teachers—they were industry
+          practitioners. They shared not only technical skills but also career advice, insights into industry trends,
+          and the importance of building a strong developer community.<br><br>
+
+
+          Working alongside other participants was equally rewarding. We shared challenges, brainstormed solutions, and
+          celebrated wins together. This collaborative spirit mirrors the open-source culture of Web3 itself, where
+          developers across the world collectively build the future.<br><br>
+
+
+          <b> How This Experience Shapes My Future</b> <br><br>
+
+
+          Now, as I continue my BSc in Software Engineering, I feel more prepared than ever to align my career with the
+          opportunities emerging in the Web3 space. The certificates I earned are not just pieces of paper—they
+          represent hours of dedication, problem-solving, and skill acquisition.<br><br>
+
+
+          <b>This experience has motivated me to:</b> <br><br>
+
+
+          Specialize in Blockchain Development : I plan to integrate my Web3 and Solidity skills into future projects
+          and academic research.<br><br>
+
+
+          Contribute to Open Source : Inspired by the Web3 community, I want to actively contribute to decentralized
+          projects that impact people globally.<br><br>
+
+
+          Bridge Web2 and Web3 : With my background in software engineering, I see myself helping traditional industries
+          transition into decentralized models, creating hybrid solutions that merge both worlds.
+        </p>
+        <!--<a href="#" class="read-more">Read More</a> -->
+      </article>
+
+      <!--<article class="post">
+        <img src="https://source.unsplash.com/800x400/?laptop" alt="Blog image">
+        <h2>Getting Started with Python APIs</h2>
+        <p>Step-by-step guide on how to create a RESTful API using FastAPI and deploy it with ease.</p>
+        <a href="#" class="read-more">Read More</a>
+      </article>
+
+      <article class="post">
+        <img src="https://source.unsplash.com/800x400/?technology" alt="Blog image">
+        <h2>Designing Clean Architecture in .NET</h2>
+        <p>A practical guide to structuring .NET applications for scalability and maintainability.</p>
+        <a href="#" class="read-more">Read More</a>
+      </article>-->
+    </section>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Search</h3>
+        <input type="text" id="search" placeholder="Search posts...">
+      </div>
+      <div class="widget">
+        <!--<h3>Categories</h3>
+        <ul>
+          <li><button class="filter" data-category="all">All</button></li>
+          <li><button class="filter" data-category="performance">Performance</button></li>
+          <li><button class="filter" data-category="python">Python</button></li>
+          <li><button class="filter" data-category=".net">.NET</button></li>
+        </ul>-->
+      </div>
+    </aside>
+  </main>
+
+  <footer style="background-color: rgb(52, 61, 85);">
+    <p>&copy; 2025 Umar Farouk. All Rights Reserved.</p>
+
+    <button class="back-top" onclick="scrollToTop()"><span>BACK TOP</span></button>
+  </footer>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.querySelector(".nav-links").classList.toggle("show");
+    });
+
+    // Show button when scrolling down
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.querySelector('.back-top').style.display = 'block';
+      } else {
+        document.querySelector('.back-top').style.display = 'none';
+      }
+    };
+
+    // Scroll to top function
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

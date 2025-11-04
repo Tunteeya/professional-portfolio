@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ibrahim Umar Farouk - Software Engineering Student</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="assets/images/A.png" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+
+  <style>
+    .dot {
+      width: 6px;
+      height: 6px;
+      background-color: yellow;
+      border-radius: 50%;
+      display: inline-block;
+      animation: fade 1.5s infinite ease-in-out;
+
+
+
+    }
+
+    @keyframes fade {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html">
+        <img class="logo" src="assets/images/H.png" alt="">
+      </a>
+
+      <button class="nav-toggle-btn" aria-label="Toggle Menu" data-nav-toggle-btn>
+        <ion-icon name="menu-outline" class="menu-icon"></ion-icon>
+        <ion-icon name="close-outline" class="close-icon"></ion-icon>
+      </button>
+
+      <nav class="navbar container">
+        <ul class="navbar-list">
+
+
+          <li>
+            <a href="#about" class="navbar-link" data-nav-link>About</a>
+          </li>
+
+          <li>
+            <a href="#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+          </li>
+
+          <li>
+            <a href="#skills" class="navbar-link" data-nav-link>Skills</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link" data-nav-link>Contact <div style="margin-bottom: 3px;" class="dot"></div> </a>
+
+
+          </li>
+
+          <li>
+            <a href="#blog" class="navbar-link" data-nav-link>Blog</a>
+          </li>
+
+          <li>
+            <a href="Files/UMAR.pdf" class="btn btn-primary">Download CV</a>
+          </li>
+
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero" id="home">
+        <div class="container">
+
+          <div class="hero-banner ">
+
+            <img src="./assets/images/R.jpg" width="800" height="850" loading="lazy" alt="Umar's Photo Photo"
+              class="img-cover">
+            <!--
+              <div class="elem elem-1">
+                <p class="elem-title">12</p>
+  
+                <p class="elem-text">Years of Success</p>
+              </div>
+  
+              <div class="elem elem-2">
+                <p class="elem-title">800+</p>
+  
+                <p class="elem-text">Projects Completed</p>
+              </div>
+            
+           
+  
+            <div class="elem elem-3">
+              <ion-icon name="trophy"></ion-icon>
+            </div>
+
+
+
+             
+            <img src="./assets/images/rotate-img.png" width="169" height="172" alt="I'm developer from New York"
+              class="rotate-img">
+    
+
+            -->
+          </div>
+
+          <div class="hero-content">
+
+            <h2 class="hero-title ">
+              <span>Hello, I'm</span>
+              <strong style="color: rgb(222, 61, 61);">Umar Farouk</strong>A Software Engineering Student <span
+                class="typed" data-typed-items="Ghana,Northern Region,Tamale"></span>
+            </h2>
+
+
+
+
+
+
+            <p class="hero-text">
+              Driven by curiosity and a love for technology, I'm always looking for new challenges
+            </p>
+
+            <div class="btn-group">
+              <a href="#contact" class="btn btn-primary blue">Get in Touch</a>
+
+              <a href="#about" class="btn">About Me</a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about">
+        <div class="container">
+
+          <figure class="about-banner">
+
+            <img src="./assets/images/v.jpg" width="800" height="652" loading="lazy" alt="Umar's Photo"
+              class="img-cover">
+
+            <img src="./assets/images/t.jpg" width="800" height="717" loading="lazy" alt="Umar's Photo" class="abs-img">
+
+            <div class="abs-icon abs-icon-1">
+              <ion-icon name="logo-css3"></ion-icon>
+            </div>
+
+            <div class="abs-icon abs-icon-2">
+              <img width="50" height="50" src="https://img.icons8.com/fluency/48/c-plus-plus-logo.png"
+                alt="c-plus-plus-logo" />
+              <!--<ion-icon name="logo-javascript"></ion-icon>-->
+            </div>
+
+            <div class="abs-icon abs-icon-3">
+              <img width="50" height="50" src="https://img.icons8.com/fluency/48/python.png" alt="python" />
+              <!--<ion-icon name="logo-angular"></ion-icon>-->
+            </div>
+
+          </figure>
+
+          <div class="about-content">
+
+            <!--<p class="section-subtitle">I'm a student Engineer</p>-->
+
+            <h2 class="h2 section-title">Engineering Applications that Matter</h2>
+
+            <p class="section-text">
+
+              I’m a final year <b>BSc Software Engineering</b> student at <b>C.K. Tedam University of Technology and
+                Applied
+                Sciences</b>, focused on developing applications that solve real-world problems and create a positive
+              impact
+              on people’s daily lives.
+            </p>
+
+            <p class="section-text">
+              My goal is to blend creativity with technology to design software that is not only functional but also
+              meaningful. I believe in learning by doing, which drives me to continuously improve my skills and take on
+              projects that challenge me to grow.
+
+              With every line of code, I aim to bring ideas to life and contribute to innovations that truly matter.
+            </p>
+
+            <a href="#portfolio" class="btn btn-primary blue">View Portfolio</a>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PORTFOLIO
+      -->
+
+      <section class="section portfolio" id="portfolio">
+        <div class="container">
+
+          <p class="section-subtitle">Portfolio</p>
+
+          <h2 class="h2 section-title">My Amazing Works</h2>
+
+          <p class="section-text">
+            Selected projects that reflect my skills, creativity, and dedication to software engineering
+          </p>
+
+          <ul class="portfolio-list">
+
+            <li>
+              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/new.png')">
+                <div class="card-content">
+
+                  <p class="card-subtitle">A Re-engineered Project</p>
+
+                  <h3 class="h3 card-title">CKT UTAS HEALTH</h3>
+
+                  <span class="btn-link">
+                    <span>View Project</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+
+            <!--                    PROJECTS CONTI.
+            <li>
+              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-2.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle">Vimeo</p>
+
+                  <h3 class="h3 card-title">Web Application for Desiverse</h3>
+
+                  <span class="btn-link">
+                    <span>View Project</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-3.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle">Soundcloud</p>
+
+                  <h3 class="h3 card-title">Web Application for Desiverse</h3>
+
+                  <span class="btn-link">
+                    <span>View Project</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="portfolio-card" style="background-image: url('./assets/images/portfolio-4.jpg')">
+                <div class="card-content">
+
+                  <p class="card-subtitle">Details</p>
+
+                  <h3 class="h3 card-title">Web Application for Desiverse</h3>
+
+                  <span class="btn-link">
+                    <span>View Project</span>
+
+                    <ion-icon name="arrow-forward"></ion-icon>
+                  </span>
+
+                </div>
+              </a>
+            </li>
+           
+           
+            -->
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #SKILLS
+      -->
+
+      <section class="section skills" id="skills">
+        <div class="container">
+
+          <p class="section-subtitle">My Skills</p>
+
+          <h2 class="h2 section-title">I Develop Skills Regularly</h2>
+
+          <!--<p class="section-text">
+            I am committed to lifelong learning and skill development    I Develop Skills Regularly
+          </p> -->
+          <ul class="skills-list">
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 50%">
+                <h3 class=" skills-title">HTML / CSS</h3>
+
+                <data class="skills-data" value="95"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 75%">
+                <h3 class="skills-title">Requirements Engineering</h3>
+
+                <data class="skills-data" value="75"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 90%">
+                <h3 class="skills-title">Data Structures</h3>
+
+                <data class="skills-data" value="90"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 70%">
+                <h3 class="skills-title">Python</h3>
+
+                <data class="skills-data" value="70"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 80%">
+                <h3 class="skills-title">PHP</h3>
+
+                <data class="skills-data" value="80"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 75%">
+                <h3 class="skills-title">C++</h3>
+
+                <data class="skills-data" value="75"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+
+
+
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 75%">
+                <h3 class="skills-title">Software Validation and Verification</h3>
+
+                <data class="skills-data" value="75"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 75%">
+                <h3 class="skills-title">Blockchain Technology</h3>
+
+                <data class="skills-data" value="75"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+
+
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 75%">
+                <h3 class="skills-title">SQL</h3>
+
+                <data class="skills-data" value="75"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 75%">
+                <h3 class="skills-title">MySQL</h3>
+
+                <data class="skills-data" value="75"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 75%">
+                <h3 class="skills-title">System Analysis and Design</h3>
+
+                <data class="skills-data" value="75"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+            <li class="skills-item">
+              <div class="wrapper" style="width: 75%">
+                <h3 class="skills-title">Sofware Quality Engineering</h3>
+
+                <data class="skills-data" value="75"> </data>
+              </div>
+
+              <div class="skills-progress-box">
+                <div class="skills-progress" style="width: 100%"></div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact" id="contact">
+        <div class="container">
+
+          <div class="contact-card">
+
+            <p class="card-subtitle">Don't be shy</p>
+
+            <h2 class="h2 section-title">Drop Me a Line</h2>
+
+            <div class="wrapper">
+
+              <form action="form.php" method="post" class="contact-form">
+
+                <input type="text" id="name" name="name" placeholder="Name" required class="contact-input">
+
+                <input type="email" id="email" name="email" placeholder="Email" required class="contact-input">
+
+                <textarea id="message" name="message" placeholder="Message" required class="contact-input"></textarea>
+
+                <button type="submit" name="submit" class="btn-submit">Submit Message</button>
+
+              </form>
+
+              <ul class="contact-list">
+
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <!--<ion-icon name="location"></ion-icon>-->
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/order-delivered.png"
+                      alt="order-delivered" />
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Digital Address</h3>
+
+                    <address class="contact-item-link">
+                      NT-0002-1451
+                    </address>
+                  </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+                    <!--<ion-icon name="mail"></ion-icon>-->
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/new-post.png"
+                      alt="new-post" />
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Email</h3>
+
+                    <a href="mailto:hello@ethan.com" class="contact-item-link">ibrahimumar588@gmail.com</a>
+                  </div>
+
+                </li>
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/whatsapp--v1.png"
+                      alt="whatsapp--v1" />
+                    <!--<ion-icon name="call"></ion-icon>-->
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">Phone / WhatsApp</h3>
+
+                    <a href="whatsapp.com" class="contact-item-link">+233 550 573 335</a>
+                  </div>
+
+                </li>
+
+
+
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/linkedin.png"
+                      alt="linkedin" />
+                    <!--<ion-icon name="linkedin"></ion-icon>-->
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">LinkedIn</h3>
+
+                    <a href="linkedin.com" class="contact-item-link">Ibrahim Umar Farouk</a>
+                  </div>
+
+                </li>
+
+
+                <li class="contact-item">
+
+                  <div class="contact-icon">
+
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/github.png" alt="github" />
+                    <!--<ion-icon name=""></ion-icon>-->
+                  </div>
+
+                  <div>
+                    <h3 class="contact-item-title">GitHub</h3>
+
+                    <a href="github.com" class="contact-item-link">Ibrahim Umar Farouk</a>
+                  </div>
+
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              </ul>
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #BLOG
+      -->
+
+      <section class="section blog" id="blog">
+        <div class="container">
+
+          <p class="section-subtitle">Latest News</p>
+
+          <h2 class="h2 section-title">Checkout My Recent Blogs</h2>
+
+          <p class="section-text">
+            Discover my latest thoughts and Stories
+          </p>
+
+          <ul class="blog-list">
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="blog 1.html">
+                    <img src="./assets/images/X.jpg" width="1181" height="843" loading="lazy"
+                      alt="Reflections from Hopin Academy's Tamale Event" class="img-cover">
+                  </a>
+                </figure>
+
+                <a href="" class="card-tag">Blockchain Technology</a>
+                <p class="card-date">August , 2024</p>
+
+                <h3 class="card-title">
+                  <a href="blog 1.html">Reflections from Hopin Academy's Tamale Event - Cardano Summit 2024</a>
+                </h3>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="blog 2.html">
+                    <img src="./assets/images/B.jpg" width="1181" height="843" loading="lazy"
+                      alt="My journey to Earning the Web3 Fundamentals Certificate at Hackerboost" class="img-cover">
+                  </a>
+                </figure>
+
+                <a href="" class="card-tag">Blockchain Technology</a>
+                <p class="card-date">October , 2024</p>
+
+                <h3 class="card-title">
+                  <a href="blog 2.html">My journey to Earning the Web3 Fundamentals Certificate at Hackerboost</a>
+                </h3>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="blog-card">
+
+                <figure class="card-banner">
+                  <a href="blog 3.html">
+                    <img src="./assets/images/Q.jpg" width="1181" height="860" loading="lazy"
+                      alt="Jim Morisson Says when the musics over turn off the light" class="img-cover">
+                  </a>
+                </figure>
+
+                <a href="#" class="card-tag"> Blochain Technology</a>
+                <p class="card-date">August , 2025</p>
+
+                <h3 class="card-title">
+                  <a href="blog 3.html">My experience at Sui Ghana workshop</a>
+                </h3>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        &copy; 2022 - 2025 <a href="#" class="copyright-link">codewithsadee & Umar Farouk</a>.<br All Rights Reseverd
+          </p>
+
+      <ul class="footer-list">
+        <li>
+          <a href="#" class="footer-link">Terms & Condition</a>
+        </li>
+
+        <li>
+          <a href="#" class="footer-link">Privacy Policy</a>
+        </li>
+      </ul>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-to-top" data-back-to-top>BACK TOP</a>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

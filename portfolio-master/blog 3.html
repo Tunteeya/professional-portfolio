@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umar Farouk | Blog</title>
+  <link rel="stylesheet" href="">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Open+Sans:wght@400;500;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="assets/images/A.png" type="image/svg+xml">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: rgb(36, 35, 56);
+      color: #333;
+    }
+
+    header {
+      background-color: rgb(36, 35, 56);
+      color: #fff;
+      padding: 1px 15px;
+      position: sticky;
+      top: 0;
+      transition: 0.25s var(--cubic-out);
+      z-index: 4;
+      /* dark background makes white shadow pop */
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+      height: 100px;
+    }
+
+
+    .logo {
+      padding-top: 1.5rem;
+      padding-left: 1rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+      color: var(--white);
+      font-family: var(--ff-barlow);
+      padding-block: 3px;
+      transition: var(--transition-1);
+      padding-right: 7rem;
+      padding-top: 1rem;
+
+
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: medium;
+
+    }
+
+    .nav-links a:hover {
+      color: rgb(251, 82, 57);
+    }
+
+    .me:hover {
+      color: blue;
+    }
+
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      background-color: yellow;
+      border-radius: 50%;
+      display: inline-block;
+      animation: fade 1.5s infinite ease-in-out;
+      margin-left: -27px;
+      margin-top: 6px;
+
+
+
+
+    }
+
+    @keyframes fade {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+      background: #053b71;
+      color: #fff;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .post {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .post img {
+      width: 100%;
+    }
+
+    .post h2 {
+      margin: 15px;
+    }
+
+    .post p {
+      margin: 0 15px 15px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin: 0 15px 15px;
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sidebar .widget {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .logo {
+      color: var(--white);
+      font-family: var(--ff-poppins);
+      font-size: 2rem;
+      width: 4rem;
+      margin-top: -0.5rem;
+
+    }
+
+    /* Style for the button */
+    .back-top {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      padding: 10px;
+      background-color: #4f46e5;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      display: none;
+      /* hide initially */
+    }
+
+    .back-top span {
+      border-left: 1px solid white;
+      /* vertical line */
+      margin-left: 5px;
+      padding-left: 5px;
+    }
+
+    .back-top:hover {
+      background-color: #4338ca;
+      /* Darker indigo */
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <!--<div class="logo">Umar Farouk</div>-->
+      <a href="index.html">
+        <img class="logo" src="assets/images/H.png" alt="">
+      </a>
+      <ul class="nav-links">
+       
+        <li>
+          <a href="index.html#about" class="navbar-link" data-nav-link>About</a>
+        </li>
+        <li>
+          <a href="index.html#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+        </li>
+        <li>
+          <a href="index.html#skills" class="navbar-link" data-nav-link>Skills</a>
+        </li>
+        <li><a href="index.html#contact">Contact </a></li>
+        <div class="dot"></div>
+
+        <li>
+          <a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a>
+        </li>
+        <li>
+          <a style="font-weight: 700; font-size: large; background-color: red; padding: 10px 40px; border-radius: 50px;"
+            href="Files/UMAR.pdf" class="download">Download CV</a>
+        </li>
+
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+  <section style="background-image: url(assets/images/heroo.jpg);" class="hero">
+    <h1 style="font-size: 200; ">Blockchain Technology</h1>
+    <p>My journey to earning to Earing the <b><span style="color: red;"> Web3 Fundamentals Certificate</span></b> at
+      Hackerboost</p>
+    <p style="font-size: smaller;" class="card-date">October , 2024 | Umar Farouk</p>
+  </section>
+
+  <main class="container">
+    <section class="blog-posts" id="blog-posts">
+      <article class="post">
+        <img src="assets/images/Q.jpg" alt="Blog image">
+        <!--<h2>Optimizing Frontend Performance</h2>-->
+        <br><br>
+        <p>
+          In <b> September 2025 </b>, Tamale became a hub of creativity and innovation as students and developers from
+          across the
+          region gathered for a three-day HackerBoost Workshop. The event, which ran from Friday through Sunday, offered
+          an exciting opportunity to explore cutting-edge technologies and dive deep into the future of Web3
+          development. <br> <br>
+
+          <b>A Weekend of Learning and Collaboration </b> <br><br>
+
+          The workshop was organized as part of the <b> Sui Ghana </b> community’s ongoing efforts to build capacity
+          among young
+          developers and enthusiasts in the blockchain ecosystem. The sessions were hands-on, engaging, and insightful —
+          bridging theory and real-world application. <br><br>
+
+          Participants were introduced to Move, the programming language behind the Sui blockchain. The facilitators
+          guided everyone through the installation process using Chocolatey, the Command Line Interface (CLI), and other
+          supporting tools. For many attendees, it was their first encounter with the Move language, making it a
+          valuable and eye-opening experience.<br><br>
+
+          Beyond blockchain, the workshop also covered essential topics in React and Node.js, giving participants a
+          broader understanding of modern web development. The combination of backend and frontend technologies provided
+          a well-rounded foundation for building decentralized applications (dApps) and web-based platforms. <br><br>
+
+          <b>Empowering the Next Generation of Developers</b> <br><br>
+
+          A key highlight of the workshop was the presence of Mrs. Uju, the only female among the Sui Ghana team. Her
+          contribution stood out as a reminder of the importance of inclusivity and women’s representation in the tech
+          ecosystem. Her mentorship and words of encouragement inspired many, especially young women aspiring to enter
+          the tech industry. <br><br>
+
+          Throughout the three days, the energy in the room was electric — filled with collaboration, curiosity, and
+          creativity. Students exchanged ideas, engaged in discussions, and connected with developers and mentors who
+          shared their passion for innovation. The event went beyond coding — it built a sense of community and shared
+          purpose. <br><br>
+
+          <b> Looking Ahead </b> <br><br>
+
+          By the end of the weekend, participants walked away with new skills, valuable insights, and stronger
+          professional networks. The HackerBoost Workshop in Tamale not only strengthened local technical capacity but
+          also reinforced Ghana’s growing presence in the global Web3 and blockchain space. <br><br>
+        </p>
+        <!--<a href="#" class="read-more">Read More</a> -->
+      </article>
+
+      <!--<article class="post">
+        <img src="https://source.unsplash.com/800x400/?laptop" alt="Blog image">
+        <h2>Getting Started with Python APIs</h2>
+        <p>Step-by-step guide on how to create a RESTful API using FastAPI and deploy it with ease.</p>
+        <a href="#" class="read-more">Read More</a>
+      </article>
+
+      <article class="post">
+        <img src="https://source.unsplash.com/800x400/?technology" alt="Blog image">
+        <h2>Designing Clean Architecture in .NET</h2>
+        <p>A practical guide to structuring .NET applications for scalability and maintainability.</p>
+        <a href="#" class="read-more">Read More</a>
+      </article>-->
+    </section>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Search</h3>
+        <input type="text" id="search" placeholder="Search posts...">
+      </div>
+      <div class="widget">
+        <!--<h3>Categories</h3>
+        <ul>
+          <li><button class="filter" data-category="all">All</button></li>
+          <li><button class="filter" data-category="performance">Performance</button></li>
+          <li><button class="filter" data-category="python">Python</button></li>
+          <li><button class="filter" data-category=".net">.NET</button></li>
+        </ul>-->
+      </div>
+    </aside>
+  </main>
+
+  <footer style="background-color: rgb(52, 61, 85);">
+    <p>&copy; 2025 Umar Farouk. All Rights Reserved.</p>
+
+    <button class="back-top" onclick="scrollToTop()"><span>BACK TOP</span></button>
+  </footer>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.querySelector(".nav-links").classList.toggle("show");
+    });
+
+    // Show button when scrolling down
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.querySelector('.back-top').style.display = 'block';
+      } else {
+        document.querySelector('.back-top').style.display = 'none';
+      }
+    };
+
+    // Scroll to top function
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scroll Animation Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      min-height: 200vh; /* just to allow scrolling */
+    }
+
+    /* Initial hidden state */
+    .about-banner {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    /* Final visible state */
+    .about-banner.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    figure {
+      width: 300px;
+      margin: 200px auto; /* position in middle so you scroll to it */
+      border: 2px solid #ccc;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .abs-icon {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Scroll Down ⬇️</h1>
+
+  <figure class="about-banner">
+    <img src="https://via.placeholder.com/300x200" alt="Umar's Photo">
+    <div class="abs-icon">🔥 CSS3</div>
+    <div class="abs-icon">💻 C++</div>
+    <div class="abs-icon">🐍 Python</div>
+  </figure>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const banner = document.querySelector(".about-banner");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              banner.classList.add("visible");
+              observer.unobserve(banner); // run only once
+            }
+          });
+        },
+        { threshold: 0.2 } // trigger when 20% visible
+      );
+
+      observer.observe(banner);
+    });
+  </script>
+
+</body>
+</html>

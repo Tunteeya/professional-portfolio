@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Umar Farouk | Blog</title>
+  <link rel="stylesheet" href="">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="assets/images/A.png" type="image/svg+xml">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      /* background: #f7f7f7;*/
+      background-color: rgb(36, 35, 56);
+      ;
+      color: #333;
+
+    }
+
+    header {
+      background-color: rgb(36, 35, 56);
+      color: #fff;
+      padding: 1px 15px;
+      position: sticky;
+      top: 0;
+      transition: 0.25s var(--cubic-out);
+      z-index: 4;
+      /* dark background makes white shadow pop */
+      box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
+      height: 100px;
+    }
+
+    .header.nav-active {
+      height: 335px;
+      transition-duration: 0.35s;
+    }
+
+    .logo {
+      padding-top: 1.5rem;
+      padding-left: 1rem;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 35px;
+      color: var(--white);
+      font-family: var(--ff-barlow);
+      padding-block: 3px;
+      transition: var(--transition-1);
+      padding-right: 7rem;
+      padding-top: 1rem;
+
+    }
+
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 400;
+      font-size: medium;
+
+    }
+
+    .nav-links a:hover {
+      color: rgb(251, 82, 57);
+    }
+
+    /*.btn {
+      color: white;
+      font-family: var(--ff-barlow);
+      font-size: var(--fs-5);
+      font-weight: 500;
+      max-width: max-content;
+      padding: 10px 40px;
+      border-radius: 50px;
+      transition: var(--transition-2);
+    }
+
+    .btn-primary.blue {
+      background-color: var(--klein-blue);
+    }
+
+    .btn-primary.blue:is(:hover, :focus) {
+      background-color: var(--orange-soda);
+    }*/
+
+
+
+    .dot {
+      width: 5px;
+      height: 5px;
+      background-color: yellow;
+      border-radius: 50%;
+      display: inline-block;
+      animation: fade 1.5s infinite ease-in-out;
+      margin-left: -27px;
+      margin-top: 6px;
+
+
+
+    }
+
+    @keyframes fade {
+
+      0%,
+      100% {
+        opacity: 0.2;
+        transform: scale(0.8);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+
+
+
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+
+      color: #fff;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .post {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .post img {
+      width: 100%;
+    }
+
+    .post h2 {
+      margin: 15px;
+    }
+
+    .post p {
+      margin: 0 15px 15px;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin: 0 15px 15px;
+      color: #0066cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .sidebar .widget {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #222;
+      color: #fff;
+      margin-top: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    .logo {
+      color: var(--white);
+      font-family: var(--ff-poppins);
+      font-size: 2rem;
+      width: 4rem;
+      margin-top: -0.5rem;
+
+    }
+
+
+    .lato-thin {
+      font-family: "Lato", sans-serif;
+      font-weight: 100;
+      font-style: normal;
+    }
+
+    .lato-light {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      font-style: normal;
+    }
+
+    .lato-regular {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .lato-bold {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    .lato-black {
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      font-style: normal;
+    }
+
+    .lato-thin-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 100;
+      font-style: italic;
+    }
+
+    .lato-light-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .lato-regular-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    .lato-bold-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .lato-black-italic {
+      font-family: "Lato", sans-serif;
+      font-weight: 900;
+      font-style: italic;
+    }
+
+
+    .back-top {
+      writing-mode: vertical-lr;
+      transform: rotate(180deg);
+      position: fixed;
+      right: 10px;
+      bottom: 10px;
+      padding: 10px;
+      background-color: #4f46e5;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      display: none;
+      /* hide initially */
+    }
+
+    .back-top span {
+      border-left: 1px solid white;
+      /* vertical line */
+      margin-left: 5px;
+      padding-left: 5px;
+    }
+
+    .back-top:hover {
+      background-color: #4338ca;
+      /* Darker indigo */
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+ 
+      <a href="index.html">
+        <img class="logo" src="assets/images/H.png" alt="">
+      </a>
+      <ul class="nav-links">
+        <li>
+          <a href="index.html#about" class="navbar-link" data-nav-link>About</a>
+        </li>
+        <li>
+          <a href="index.html#portfolio" class="navbar-link" data-nav-link>Portfolio</a>
+        </li>
+        <li>
+          <a href="index.html#skills" class="navbar-link" data-nav-link>Skills</a>
+        </li>
+        <li><a href="index.html#contact">Contact </a></li>
+        <div class="dot"></div>
+
+        <li>
+          <a href="index.html#blog" class="navbar-link" data-nav-link>Blog</a>
+        </li>
+
+        <li>
+          <a style="font-weight: 700; font-size: large; background-color: red; padding: 10px 40px; border-radius: 50px;"
+            href="Files/UMAR.pdf" class="download">Download CV</a>
+        </li>
+      </ul>
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+    </nav>
+  </header>
+
+
+  <section style="background-image: url(assets/images/heroo.jpg);" class="hero">
+    <h1 style="font-size: 200; ">Blockchain Technology</h1>
+    <p>Reflections from Hopin Acadamy's Tamale Event - <b>Cardano <span style="color: red;">Summit</span> 2024</b></p>
+    <p style="font-size: smaller;" class="card-date">August , 2024 | Umar Farouk</p>
+  </section>
+
+  <main class="container">
+    <section class="blog-posts" id="blog-posts">
+      <article class="post">
+        <img src="assets/images/cardano2.jpg" alt="Blog image">
+        <!--<h2>Optimizing Frontend Performance</h2>-->
+        <br><br>
+        <p>October 2024 was a month to remember in Tamale, Ghana. I had the privilege of participating in the Cardano
+          Summit 2024, hosted at Hopin Academy, a hub that has consistently been at the forefront of innovation,
+          technology, and entrepreneurship in Northern Ghana. The event was part of Cardano’s global summit series,
+          where communities across the world came together to celebrate, learn, and explore the future of blockchain
+          technology.<br><br>
+
+          What made the Tamale edition so special was not only the global nature of the Cardano ecosystem but also the
+          local relevance it carried. It showed us that while blockchain may sound like a global trend, its real impact
+          starts at the community level—in places like Tamale, where innovation and creativity are growing rapidly among
+          young people.<br><br>
+
+          <b>A Gathering of Minds and Dreams</b><br><br>
+
+          Walking into the venue, I could feel the energy in the air. The room was filled with a diverse group of
+          people: students, developers, entrepreneurs, blockchain enthusiasts, and community leaders. There was a shared
+          sense of curiosity and excitement. Everyone wanted to understand how Cardano’s blockchain ecosystem could
+          shape the future of finance, education, identity, and governance in Ghana and Africa at large.<br>
+
+          One of the most inspiring aspects was the accessibility of the discussions. Even though blockchain is often
+          considered a highly technical subject, the facilitators and speakers broke down concepts into clear, practical
+          examples. It didn’t feel like we were just talking about technology; instead, it felt like we were exploring
+          tools for empowerment.<br><br>
+
+          <b>The Role of Cardano in Ghana – Insights from the Community Ambassador</b><br><br>
+
+          The highlight of the summit for me was hearing from <b>Mohammed Yakubu Mustafa</b>, the Cardano Ghana
+          Community
+          Ambassador. His presence and words were a reminder of the importance of local leadership in global
+          movements.<br>
+
+          He emphasized that Africa—and Ghana in particular—is uniquely positioned to take advantage of blockchain. Our
+          challenges in identity management, financial inclusion, and transparency are exactly the kinds of problems
+          that decentralized technologies like Cardano are built to solve.<br><br>
+
+          Mustafa spoke passionately about Cardano’s vision: creating a blockchain platform that is sustainable,
+          inclusive, and adaptable to local needs. What struck me the most was his point that Ghanaians should not only
+          be consumers of blockchain solutions but also creators and innovators in the space. This resonated deeply with
+          me as a software engineering student who wants to build technology that makes a difference. <br><br>
+
+          <b style="font-size: larger;">Themes That Stood Out</b> <br><br>
+
+          Several recurring themes came up throughout the discussions and networking sessions at the summit. <br><br>
+
+          <b>Financial Inclusion</b> <br><br>
+          Many people in Ghana and Africa still lack access to basic banking services. Blockchain provides a way to
+          create systems that are secure, transparent, and accessible to everyone, regardless of geography. <br><br>
+
+          <b>Digital Identity</b><br><br>
+          In a world where proving identity is essential, blockchain could help create secure, tamper-proof digital IDs.
+          This could change how we access education, healthcare, and government services. <br><br>
+
+          <b>Sustainability</b><br><br>
+          Cardano has made a name for itself as a blockchain that prioritizes energy efficiency. This is critical for
+          Africa, where we need technologies that don’t put unnecessary strain on resources. <br><br>
+
+          <b> Education and Youth Empowerment</b><br><br>
+          The event emphasized that young people are not just the future—they are the present. The skills we develop
+          today will determine how Ghana positions itself in the global digital economy. <br><br>
+
+          <b>My Personal Experience</b> <br><br>
+
+          As a final-year Software Engineering student at C.K. Tedam University of Technology and Applied Sciences,
+          attending the summit was more than just an academic or professional activity—it was a personal turning point.
+          <br><br>
+
+          I realized that my journey in technology is not just about learning programming languages or building apps for
+          the sake of it. It’s about using these skills to solve real problems in my community. Listening to the
+          speakers and engaging with other participants helped me see how my passion for software development connects
+          with larger goals like financial inclusion, social impact, and digital transformation. <br><br>
+
+          I also had the chance to network with other young innovators. The conversations we shared—about blockchain in
+          agriculture, decentralized education systems, and tech startups—were proof that Northern Ghana is bursting
+          with potential. It was refreshing to see people not only dreaming but also actively working on solutions.
+          <br><br>
+
+          <b>The Impact of Hopin Academy</b> <br><br>
+
+          It would be impossible to talk about this event without acknowledging Hopin Academy. For years, Hopin has been
+          a catalyst for innovation and entrepreneurship in Tamale, providing training, mentorship, and a platform for
+          young people to learn and thrive. Hosting the Cardano Summit was yet another step in their mission to make
+          technology accessible and meaningful for everyone in the region. <br><br>
+
+          Their ability to bring global initiatives like the Cardano Summit to Tamale shows the power of local
+          institutions in shaping global conversations. Hopin is not just a venue; it’s a movement that continues to
+          empower youth to think big and act boldly. <br><br>
+
+          <b>Looking Ahead</b><br><br>
+
+          Leaving the event, I felt inspired, motivated, and more determined than ever to contribute to the blockchain
+          space. The summit was a reminder that technology is not about tools—it’s about people. It’s about finding
+          solutions that make life easier, fairer, and more inclusive. <br><br>
+
+          As I look ahead, I am committed to continuing my journey as a software engineer who builds not just apps but
+          solutions that matter. I want to be part of the ecosystem that ensures Ghana is not left behind in the digital
+          revolution. <br><br>
+
+          The Cardano Summit 2024 at Hopin Academy was more than an event—it was a call to action. A call for young
+          people like me to learn, innovate, and lead. And I am grateful to have been part of it.
+        </p>
+        <!--<a href="#" class="read-more">Read More</a>-->
+      </article>
+
+      <article class="post">
+        <img src="assets/images/cardano3.jpg" alt="Blog image">
+        <p class="card-date"><i>Cardano Ambasador - Mohammed Yakubu Mustapha</i></p>
+        <!--<a href="#" class="read-more">Read More</a>-->
+      </article>
+
+      <!--<article class="post">
+        <img src="https://source.unsplash.com/800x400/?technology" alt="Blog image">
+        <h2>Designing Clean Architecture in .NET</h2>
+        <p>A practical guide to structuring .NET applications for scalability and maintainability.</p>
+        <a href="#" class="read-more">Read More</a>
+      </article>-->
+    </section>
+
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Search</h3>
+        <input type="text" id="search" placeholder="Search posts...">
+      </div>
+      <div class="widget">
+        <!-- <h3>Categories</h3>
+        <ul>
+          <li><button class="filter" data-category="all">All</button></li>
+          <li><button class="filter" data-category="performance">Performance</button></li>
+          <li><button class="filter" data-category="python">Python</button></li>
+          <li><button class="filter" data-category=".net">.NET</button></li>
+        </ul>-->
+      </div>
+    </aside>
+  </main>
+
+  <footer style="background-color:rgb(52, 61, 85);">
+    <p>&copy; 2025 Umar Farouk. All Rights Reserved.</p>
+
+
+
+    <button class="back-top" onclick="scrollToTop()"><span>BACK TOP</span></button>
+  </footer>
+
+  <script>
+    document.getElementById("menu-toggle").addEventListener("click", function () {
+      document.querySelector(".nav-links").classList.toggle("show");
+    });
+
+
+    // Show button when scrolling down
+    window.onscroll = function () {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.querySelector('.back-top').style.display = 'block';
+      } else {
+        document.querySelector('.back-top').style.display = 'none';
+      }
+    };
+
+    // Scroll to top function
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+
+
+
+
+
+
+  </script>
+</body>
+
+</html>
